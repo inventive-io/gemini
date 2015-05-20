@@ -1,0 +1,52 @@
+<section>
+	<div class="container">
+		<header class="header">
+			<h6 class="header__head">{{ name }}</h6>
+			<div class="social">
+				{{#if email.show}}
+				<a href="mailto:{{ email.val }}">
+					<i class="social__icon fa fa-envelope"></i>
+				</a>
+				{{/if}}
+				{{#if twitter.show}}
+				<a href="{{ twitter.val }}" target="_blank">
+					<i class="social__icon fa fa-twitter"></i>
+				</a>
+				{{/if}}
+				{{#if dribbble.show}}
+				<a href="{{ dribbble.val }}" target="_blank">
+					<i class="social__icon fa fa-dribbble"></i>
+				</a>
+				{{/if}}
+				{{#if linkedIn.show}}
+				<a href="{{ linkedIn.val }}" target="_blank">
+					<i class="social__icon fa fa-linkedin"></i>
+				</a>
+				{{/if}}
+				{{#if github.show}}
+				<a href="{{ github.val }}" target="_blank">
+					<i class="social__icon fa fa-github"></i>
+				</a>
+				{{/if}}
+			</div>
+		</header>
+		<div class="content">
+			<h1 class="content__head">{{ title }}</h1>
+			<p class="content__text">{{ about }}</p>
+			<div class="divider"></div>
+
+			{{#each projects}}
+				{{#if this.show}}
+				<section class="project">
+					<a href="{{this.url}}" target="_blank">
+						<h2 class="project__head">{{this.name}}</h2>
+					</a>
+					<div class="markdown">
+						{{{this.content}}}
+					</div>
+				</section>
+				{{/if}}
+			{{/each}}
+		</div>
+	</div>
+</section>
